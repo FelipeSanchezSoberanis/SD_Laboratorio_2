@@ -4,22 +4,23 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity compuertas is
 	Port(
 		A, B, C, D: in std_logic;
-		S1, S2: out std_logic
+		-- S1, S2: out std_logic
+		S2: out std_logic
 	);
 end compuertas;
 
 architecture behaviour of compuertas is
-	signal temp1, temp2, temp3, temp4: std_logic;
+	-- signal temp1, temp2, temp3, temp4: std_logic;
 	signal temp5, temp6, temp7, temp8, temp9, temp10, temp11, temp12, temp13, temp14, temp15: std_logic;
 	signal notA, notB, notC, notD: std_logic;
 	signal BxorC: std_logic;
 	begin
-		temp1 <= (not D) and (not C) and (not A);
-		temp2 <= (not D) and A and (B xor C);
-		temp3 <= (not D) and C and B;
-		temp4 <= D and (not C) and (not B);
+		-- temp1 <= (not D) and (not C) and (not A);
+		-- temp2 <= (not D) and A and (B xor C);
+		-- temp3 <= (not D) and C and B;
+		-- temp4 <= D and (not C) and (not B);
 
-		S1 <= temp1 or temp2 or temp3 or temp4;
+		-- S1 <= temp1 or temp2 or temp3 or temp4;
 
 		notA <= A nor A;
 		notB <= B nor b;
