@@ -11,7 +11,7 @@ end compuertas;
 architecture behaviour of compuertas is
 	signal temp1, temp2, temp3, temp4: std_logic;
 	-- signal temp5, temp6, temp7, temp8: std_logic;
-	signal temp9, temp10, temp11, temp12, temp13, temp14, temp15, temp16: std_logic;
+	signal temp9, temp10, temp11, temp12, temp13, temp14, temp15, temp16, temp17, temp18, temp19: std_logic;
 	signal notB, notC, notD: std_logic;
 	signal BxorC: std_logic;
 	begin
@@ -51,5 +51,14 @@ architecture behaviour of compuertas is
 		-- temp15 and (notB) = (temp15 nand notB) nand (temp15 nand notB)
 		temp16 <= (temp15 nand notB) nand (temp15 nand notB);
 
-		S2 <= temp10 or temp12 or temp14 or temp16;
+		-- S2 <= temp10 or temp12 or temp14 or temp16;
+
+		-- temp10 or temp12 = (temp10 nand temp10) nand (temp12 nand temp12)
+		temp17 <= (temp10 nand temp10) nand (temp12 nand temp12);
+		-- temp17 or temp14 = ( temp17 nand temp17 ) nand ( temp14 nand temp14 )
+		temp18 <= (temp17 nand temp17) nand (temp14 nand temp14);
+		-- temp18 or temp16 = (temp18 nand temp18) nand (temp16 nand temp16)
+		temp19 <= (temp18 nand temp18) nand (temp16 nand temp16);
+
+		S2 <= temp19;
 end behaviour;
